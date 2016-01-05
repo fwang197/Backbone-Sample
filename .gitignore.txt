@@ -1,4 +1,0 @@
-#Eclipse files and directories
-.project 
-.classpath
-.settings/
