@@ -1,6 +1,3 @@
 /**
  * 
  */
-
-
-var appView = new AppView();

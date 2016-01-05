@@ -7,6 +7,7 @@
 </head>
 <body>
 
+
   <!-- ========= -->
   <!-- Libraries -->
   <!-- ========= -->
@@ -15,18 +16,43 @@
   <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.2/backbone-min.js" type="text/javascript"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone-localstorage.js/1.0/backbone.localStorage-min.js" type="text/javascript"></script>  
   
+  <!-- ========= -->
+  <!--    CSS    -->
+  <!-- ========= -->
+  <link rel="stylesheet" type="text/css" href="main.css">
   
+  <!-- Template -->
+  
+  <script type="text/template" id="item-template">
+      <div class="view">
+      	<input class="toggle" type="checkbox" <%= completed ? 'checked' : '' %>>
+      	<label><%- title %></label>
+      	<input class="edit" value="<%- title %>">
+      	<button class="destroy">remove</button>
+    </div>
+  </script>
   <!-- ========= -->
   <!-- Your HTML -->
   <!-- ========= -->
-  <div id="container">Loading...</div>
+   <section id="todoapp">
+    <header id="header">
+      <h1>Todos</h1>
+      <input id="new-todo" placeholder="What needs to be done?">
+      <button class="add">add</button>
+    </header>
+    <section id="main">
+      <ul id="todo-list"></ul>
+    </section>
+  </section>
   
  
   <!-- =============== -->
   <!-- Javascript code -->
   <!-- =============== -->
+  <script src="model/model.js" type="text/javascript"></script>
   <script src="view/view.js" type="text/javascript"></script>
   <script src="app.js" type="text/javascript"></script>
   
+
 </body>
 </html>
