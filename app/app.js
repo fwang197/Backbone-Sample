@@ -1,0 +1,6 @@
+/**
+ * 
+ */
+
+
+var appView = new AppView();
