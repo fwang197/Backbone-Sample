@@ -7,6 +7,7 @@ app.TodoView = Backbone.View.extend({
 	template: _.template($('#item-template').html()),
 	render: function(){
 		this.$el.html(this.template(this.model.toJSON()));
+		this.$el.fadeIn(400);
 		this.input = this.$('.edit');
 		return this; // enable chained calls
 	},
@@ -18,7 +19,7 @@ app.TodoView = Backbone.View.extend({
 		'dblclick label' : 'edit',
 		'keypress .edit' : 'updateOnEnter',
 		'blur .edit' : 'close',
-		'click .toggle': 'toggleCompleted',
+		'click #toggle': 'toggleCompleted',
 		'click .destroy': 'destroy'
 	},
 	edit: function(){
@@ -26,7 +27,6 @@ app.TodoView = Backbone.View.extend({
 		this.input.focus();
 	},
 	close: function(){
-		console.log(this.input);
 		var value = this.input.val().trim();
 		if(value) {
 			this.model.save({title: value});
@@ -39,10 +39,14 @@ app.TodoView = Backbone.View.extend({
 		}
 	}, 
 	toggleCompleted: function(){
+		this.$el.toggleClass('line-trought');
 		this.model.toggle();
 	},
 	destroy: function(){
-		this.model.destroy();
+		var self = this;
+		this.$el.fadeOut(500,function(){
+			self.model.destroy();
+		});
 	}    
 });
 

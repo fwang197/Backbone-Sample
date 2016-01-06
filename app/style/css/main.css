@@ -1,0 +1,103 @@
+button{
+    border-radius: 50%;
+}
+
+
+html{
+    background-color: #42B29C;
+}
+
+.add{
+    display: inline;
+    cursor: pointer;
+}
+
+.h1{
+    font-size: 50px;
+    color:white;
+}
+
+#header{
+    text-align: center;
+    padding-bottom: 20px;
+    background-color: #1BBC9B;
+}
+
+.line-trought{
+    text-decoration: line-through;
+}
+
+#todoapp {
+    background-color: white;
+    width: 30%;
+    min-width: 300px;
+    height: 500px;
+    margin: 50px auto;
+}
+
+#todoapp ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+#todo-list input.edit {
+    display: none; /* Hides input box*/
+}
+
+#todo-list .editing label {
+    display: none; /* Hides label text when .editing*/
+}
+
+#todo-list .editing input.edit {
+    display: inline; /* Shows input text box when .editing*/
+}
+
+#todo-list li{
+    background-color: whitesmoke;
+    float: left;
+    width: 100%;
+}
+
+#todo-list li:nth-child(odd){
+    background-color: lightgray;
+    width: 100%;
+}
+
+#toggle{
+    margin-right: 10px;
+    max-width: 0;
+    height: 40px;
+    width: 50px;
+    float:left;
+    background-color: lightgreen;
+    transition:max-width 0.5s,opacity 0.1s;
+    cursor: pointer;
+    text-align: center;
+    opacity: 0;
+}
+
+.remove{
+    float: right;
+    opacity: 0;
+    transition:opacity 0.5s;
+    cursor: pointer;
+    vertical-align:middle;
+}
+
+.view{
+    padding: 10px;
+}
+
+.view:hover .remove{
+    opacity: 1;
+}
+
+li:hover  #toggle{
+    width: 50px;
+    max-width: 1000px;
+    opacity: 1;
+}
+
