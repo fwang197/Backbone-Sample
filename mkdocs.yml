@@ -3,4 +3,4 @@ theme: readthedocs
 repo_url: https://github.com/fwang197/Backbone-Sample.git
 site_description: Personnal Backbone sample
 pages:
-- [README.md, Home]
+- [intro.md, Home]
